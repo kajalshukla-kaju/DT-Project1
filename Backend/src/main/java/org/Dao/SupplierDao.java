@@ -4,9 +4,9 @@ import org.model.Supplier;
 
 public interface SupplierDao {
 	
-	public boolean addSupplier(Supplier suppliername);
-	public boolean deleteSupplier(Supplier suppliername);
-    public boolean updateSupplier(Supplier suppliername);
+	public boolean addSupplier(Supplier supplier);
+	public boolean deleteSupplier(Supplier supplier);
+    public boolean updateSupplier(Supplier supplier);
      Supplier findBySupplierId(int sid);
    List<Supplier> retrieve();
     
