@@ -7,7 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>src/main/webapp/WEB-INF/Spring Dispacher.xml</config>
+		<config>src/main/webapp/WEB-INF/SpringDispacter.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

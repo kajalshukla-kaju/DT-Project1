@@ -87,4 +87,9 @@ public class SupplierDaoImp implements SupplierDao{
 		return list;
 	}
 
+	public Supplier findBySupplierId(String sid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

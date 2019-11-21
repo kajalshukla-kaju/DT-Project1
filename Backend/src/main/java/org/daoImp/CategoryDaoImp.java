@@ -35,7 +35,7 @@ public class CategoryDaoImp implements CategoryDao{
 	}
 
 	
-	public Category searchbyid(int cid) {
+	public Category searchbyid(String cid) {
 		Session s = sf.openSession();
 	Category category =null;
 	try {
