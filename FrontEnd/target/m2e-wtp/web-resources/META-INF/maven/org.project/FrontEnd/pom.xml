@@ -20,6 +20,7 @@
   </properties>
 
   <dependencies>
+  
   	<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -32,8 +33,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
-  	
+	
   <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
 <dependency>
     <groupId>com.h2database</groupId>
@@ -48,6 +48,34 @@
     <version>2.5</version>
     <scope>provided</scope>
 </dependency>
+	<dependency>
+	 <groupId>org.project</groupId>
+  <artifactId>Backend</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+ 
+	</dependency>
+	<!-- Spring Securities -->
+	<dependency>
+    	<groupId>org.springframework.security</groupId>
+    	<artifactId>spring-security-core</artifactId>
+    	<version>4.2.3.RELEASE</version>
+	</dependency>
+	<dependency>
+    	<groupId>org.springframework.security</groupId>
+    	<artifactId>spring-security-web</artifactId>
+    	<version>4.2.3.RELEASE</version>
+	</dependency>
+	<dependency>
+    	<groupId>org.springframework.security</groupId>
+    	<artifactId>spring-security-config</artifactId>
+    	<version>4.2.3.RELEASE</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.springframework.security</groupId>
+    	<artifactId>spring-security-taglibs</artifactId>
+    	<version>4.2.3.RELEASE</version>
+	</dependency>
 
  <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 <dependency>

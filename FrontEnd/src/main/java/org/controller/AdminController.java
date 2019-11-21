@@ -8,10 +8,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 
+import org.Dao.CategoryDao;
+import org.Dao.ProductDao;
 import org.Dao.SupplierDao;
+import org.model.Category;
+import org.model.Product;
+import org.model.Supplier;
 @Controller
 @RequestMapping
 public class AdminController {
@@ -32,35 +40,35 @@ public class AdminController {
 
 	@RequestMapping(value = "/saveSupp", method = RequestMethod.POST)
 	@Transactional
-	public ModelandView saveSuppData(@RequestParam("sid") String sid, @RequestParam("suppliername")String suppliername ) {
-	ModelAndView mv = new ModelandView();
+	public ModelAndView saveSuppData(@RequestParam("sid") int sid, @RequestParam("suppliername")String suppliername ) {
+	ModelAndView mv = new ModelAndView();
 	Supplier supplier= new Supplier();
-	supplier.setsid(sid);
+	supplier.setSid(sid);
 	supplier.setSuppliername(suppliername);
-	SupplierDaoImp.insertSupplier(supplier);
+	SupplierDaoImp.addSupplier(supplier);
 	mv.setViewName("status");
 	return mv;
 		}
 	@RequestMapping(value = "/savecat", method = RequestMethod.POST)
 	@Transactional
-	public Modelandview saveCatData(@RequestParam("cid")String cid,@RequestParam ("Categoryname") String Categoryname )
+	public ModelAndView saveCatData(@RequestParam("cid")int cid,@RequestParam ("Categoryname") String Categoryname )
 	{
-	ModelAndView mv = new ModelandView();
+	ModelAndView mv = new ModelAndView();
 	Category  category = new Category();
-	category.setcid(cid);
+	category.setCid(cid);
 	category.setCategoryname(Categoryname);
 	mv.setViewName("status");
 	return mv;
 		
 	}
 	
-	@RequestMapping(value = "/saveProduct", method = ReqquestMethod.POST)
+	@RequestMapping(value = "/saveProduct", method = RequestMethod.POST)
 	@Transactional
-	public ModelandView savePoductData(HttpServletRequest req,@RequestParam("file")MultipartFile file)
+	public ModelAndView savePoductData(HttpServletRequest req,@RequestParam("file")MultipartFile file)
 	{
-		ModelandView mv=new ModelandView();
+		ModelAndView mv=new ModelAndView();
 		Product product = new Product();
-		product.setProductName(req.getParameter("productname"));
+		product.setProductname(req.getParameter("productname"));
 		product.setPrice(Float.parseFloat(req.getParameter("price")));
 		product.setDescription(req.getParameter("description"));
 		product.setStock(Integer.parseInt(req.getParameter("stock")));
@@ -69,12 +77,21 @@ public class AdminController {
 		
 		String filepath=req.getSession().getServletContext().getRealPath("/");
 		String filename = file.getOriginalFilename();
-		product.setImage(filename);
+		product.setImagename(filename);
 		ProductDao.addProduct(product);
 		System.out.println("File path" + filepath);
 		
-		
-		
+		try {
+			byte imagebyte[]=file.getBytes();
+			BufferedOutputStream out= new BufferedOutputStream(new FileOutputStream(filepath+"/webapp/image/"+filename));
+			out.write(imagebyte);
+			out.close();
+			}
+		catch (Exception e) {
+e.printStackTrace();
+		}
+	mv.addObject(product);
+	mv.setViewName("redirect:/admin/productList?update");
 		
 	}
 }

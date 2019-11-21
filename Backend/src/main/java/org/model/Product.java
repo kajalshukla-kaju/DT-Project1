@@ -19,7 +19,7 @@ public class Product {
 private int productid;
 private String productname;
 private String description;
-private String stock;
+private int stock;
 @ManyToOne(fetch = FetchType.EAGER)
 @JoinColumn(name = "cid")
 private Category category;
@@ -51,11 +51,11 @@ public String getDescription() {
 public void setDescription(String description) {
 	this.description = description;
 }
-public String getStock() {
+public int getStock() {
 	return stock;
 }
-public void setStock(String stock) {
-	this.stock = stock;
+public void setStock(int i) {
+	this.stock = i;
 }
 public Category getCategory() {
 	return category;

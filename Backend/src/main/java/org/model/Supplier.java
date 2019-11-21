@@ -31,7 +31,7 @@ public class Supplier implements Serializable {
 	public void setSuppliername(String suppliername) {
 		this.suppliername = suppliername;
 	}
-	public Supplier(int sid, String suppliername) {
+	public Supplier() {
 		super();
 		this.sid = sid;
 		this.suppliername = suppliername;

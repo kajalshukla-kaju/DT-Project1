@@ -75,8 +75,8 @@ public class Cart implements Serializable {
 	public String getCartstock() {
 		return cartstock;
 	}
-	public void setCartstock(String cartstock) {
-		this.cartstock = cartstock;
+	public void setCartstock(String qty) {
+		this.cartstock = qty;
 	}
 	public String getCartproductname() {
 		return cartproductname;

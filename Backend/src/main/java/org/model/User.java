@@ -26,6 +26,7 @@ private String mobile;
 private String address;
 @Column
 private String emailid;
+private String setRole;
 public int getCusid() {
 	return cusid;
 }
@@ -55,6 +56,10 @@ public String getEmailid() {
 }
 public void setEmailid(String emailid) {
 	this.emailid = emailid;
+}
+public void setRole(String string) {
+	this.setRole=(string);
+	
 }
 	
 }
