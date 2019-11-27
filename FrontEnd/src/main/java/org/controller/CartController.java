@@ -50,7 +50,7 @@ try {
 	String pname = req.getParameter("pname");
 	String imgName = req.getParameter("imgName");
 	Cart cartexist = CartDaoImp.getCartById(cartProductId,userEmail);
-	if(cartexist == null);
+	if(cartexist == null)
 	{
 		Cart cr = new Cart();
 		cr.setCartprice(price);
@@ -110,7 +110,7 @@ Principal principal=req.getUserPrincipal();
 String useremailid = principal.getName();
 Double total= Double.parseDouble(req.getParameter("total"));
 String payment = req.getParameter("payment");
-User user= new UserDaoImp.findingbyemailid(useremailid);
+User user= UserDaoImp.findingbyemail(useremailid);
 order.setUser(user);
 order.setTotal(total);
 order.setPayment(payment);
@@ -133,7 +133,7 @@ public ModelAndView orderprocess(HttpServletRequest req) {
 	}
 	
 @RequestMapping
-public ModelAndView  deleteCart(@PathVariable(cartId)int cartId, HttpServletRequest req)
+public ModelAndView  deleteCart(@PathVariable("cartId")int cartId, HttpServletRequest req)
 {
 ModelAndView mav = new ModelAndView();
 Principal principal = req.getUserPrincipal();

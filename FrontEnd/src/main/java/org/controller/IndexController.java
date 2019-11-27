@@ -32,7 +32,7 @@ public class IndexController {
 		
 	}
 	@RequestMapping(value = "/index", method = {RequestMethod.POST,RequestMethod.GET})
-	public String home() {
+	public String home1() {
 		return "index";
 		
 	}

@@ -25,5 +25,10 @@
                 </bean>
                 <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
                 <property name="maxUploadSize" value="300000000"></property>
-                </bean> 
+                </bean>
+                <mvc:view-controller path="/" view-name="index"/> 
+                <mvc:resources location="/WEB-INF/" mapping="/WEB-INF/**" cache-period="31556926"/>
+                <mvc:resources location="/WEB-INF/CSS/" mapping="/CSS/**" cache-period="31556926"/>
+                <mvc:resources location="/WEB-INF/image/" mapping="/WEB-INF/**" cache-period="31556926"/>
+                <mvc:annotation-driven/>
 </beans>

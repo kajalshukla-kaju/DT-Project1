@@ -30,13 +30,13 @@ public class Cart implements Serializable {
 	@Column
 	private double cartprice;
 	@Column
-	private String cartstock;
+	private int cartstock;
 	
 	private String cartproductname;
 	private String cartimage;
 	public Cart()
 	{}
-	public Cart(int cartid,int CartProductId, User cartuserDetail, double cartprice, String cartstock, String cartproductname,
+	public Cart(int cartid,int CartProductId, User cartuserDetail, double cartprice, int cartstock, String cartproductname,
 			String cartimage) {
 		super();
 		this.cartid = cartid;
@@ -72,10 +72,10 @@ public class Cart implements Serializable {
 	public void setCartprice(double cartprice) {
 		this.cartprice = cartprice;
 	}
-	public String getCartstock() {
+	public int getCartstock() {
 		return cartstock;
 	}
-	public void setCartstock(String qty) {
+	public void setCartstock(int qty) {
 		this.cartstock = qty;
 	}
 	public String getCartproductname() {

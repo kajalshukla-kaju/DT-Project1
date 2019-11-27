@@ -27,6 +27,13 @@ private String address;
 @Column
 private String emailid;
 private String setRole;
+
+public String getSetRole() {
+	return setRole;
+}
+public void setSetRole(String setRole) {
+	this.setRole = setRole;
+}
 public int getCusid() {
 	return cusid;
 }

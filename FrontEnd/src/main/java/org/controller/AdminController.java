@@ -78,7 +78,7 @@ public class AdminController {
 		String filepath=req.getSession().getServletContext().getRealPath("/");
 		String filename = file.getOriginalFilename();
 		product.setImagename(filename);
-		ProductDao.addProduct(product);
+		ProductDaoImp.addProduct(product);
 		System.out.println("File path" + filepath);
 		
 		try {
@@ -92,6 +92,6 @@ e.printStackTrace();
 		}
 	mv.addObject(product);
 	mv.setViewName("redirect:/admin/productList?update");
-		
+return mv;		
 	}
 }
