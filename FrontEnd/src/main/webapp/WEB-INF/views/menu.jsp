@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@taglib prefix="j" uri="http://java.sun.com/jstl/core" %>
-    <%@taglib prefix="spring"  uri="http://www.springframework.org/tags"%>
-
-<<spring:url var="css"value="/WEB-INF/CSS/main"/>    
+    <%@taglib prefix="spring"  uri="http://www.springframework.org/tags"%><spring:url var="css"value="/WEB-INF/CSS/main"/>    
 <j:set var="contextRoot" value="${page.Context.request.contextPath }"/>
 <<spring:url var="images"value="/WEB-INF/image"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -26,7 +24,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="${contextRoot}/index"><span><img src="${images}/emart.png" class="logo"/></span></a>
+      <a class="navbar-brand" href="${contextRoot}/index"><span><img src="${images}/" class="logo"/></span></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -44,7 +42,7 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <c:forEach var="c" items="${catList}">
-    			<li><a href="${contextRoot}/viewCat?cid=${c.cid}">${c.categoryName}</a></li>
+    			<li><a href="${contextRoot}/viewCat?cid=${c.categoryid}">${c.categoryName}</a></li>
     		</c:forEach>
           </ul>
         </li>

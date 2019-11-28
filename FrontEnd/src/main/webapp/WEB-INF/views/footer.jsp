@@ -24,6 +24,7 @@
     	}
     </style>
 </head>
+
 <body>
 <div class="container-fluid text-center" id="footer">
 <p> Copyright &copyHome Decor<br><small>2019</small></p>
