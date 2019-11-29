@@ -25,7 +25,7 @@ Doing home decor online shopping at HomeTown is easy and convenient because endl
 Great home decor items are those that are available for sale at discount prices and offers. HomeTown understands this and has a huge assortment of home decor items online. That’s why we provide several exciting offers, deals, and discounts on every home decor items for sale. We let you easily save money on our home decor accessories. So, browse this page and pick stylish and trendy home decor items online at HomeTown that come with exciting deals and exclusive offers.
 
 <div style="float: right;">
-<img alt="about" src="${pageContext.request.contextPath }/WEB-INF/CSS/image/">
+<img alt="about" src="${pageContext.request.contextPath }/WEB-INF/CSS/image/FrontEnd/src/main/webapp/WEB-INF/CSS/image/Candle-Holder.jpg/">
 </div>
 </div>
 

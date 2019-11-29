@@ -1,8 +1,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
-<spring:url var="css" value="/assets/css" />
-<spring:url var="images" value="/assets/images" />
+<spring:url var="css" value="/WEB-INF/CSS" />
+<spring:url var="images" value="/WEB-INF/CSS/images" />
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 <html>
 <head>

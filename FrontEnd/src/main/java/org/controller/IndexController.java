@@ -31,11 +31,7 @@ public class IndexController {
 		return "index"; 
 		
 	}
-	@RequestMapping(value = "/index", method = {RequestMethod.POST,RequestMethod.GET})
-	public String home1() {
-		return "index";
-		
-	}
+	
 	@RequestMapping(value = "/index",method = {RequestMethod.GET, RequestMethod.POST})
  public String home() {
 		return "index";

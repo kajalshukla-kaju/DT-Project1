@@ -25,7 +25,7 @@
   	}
   </style>
 </head>
-<body style="background-image: url('${pageContext.request.contextPath}/WEB-INF/image/');">
+<body style="background-image: url('${pageContext.request.contextPath}/WEB-INF/CSS/image//FrontEnd/src/main/webapp/WEB-INF/CSS/image/pay.jpg');">
 <div><%@include file="menu.jsp" %></div>
 <div style="width: 100%; height: 70px; "></div>
 <div class="container">

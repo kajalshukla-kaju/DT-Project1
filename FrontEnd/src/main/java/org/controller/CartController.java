@@ -13,11 +13,14 @@ import org.Dao.SupplierDao;
 import org.Dao.UserDao;
 import org.model.Cart;
 import org.model.Order;
+import org.model.Product;
 import org.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -37,7 +40,17 @@ SupplierDao SupplierDaoImp;
 @Autowired
 UserDao UserDaoImp;
 
-@RequestMapping
+@RequestMapping(value = "/proDetails" )
+public ModelAndView prodDet(@RequestParam("pid")int pid)
+{
+	ModelAndView mv = new ModelAndView();
+	Product prod = ProductDaoImp.searchbyid(pid);
+	mv.addObject("prod",prod);
+	mv.setViewName("prodDetails");
+	return mv;
+}
+@RequestMapping(value =  "/addToCart", method = RequestMethod.POST)
+
 public ModelAndView addtocart (HttpServletRequest req)
 {
 ModelAndView mav=new ModelAndView();
@@ -88,7 +101,7 @@ try {
     return mav;
 }
 }
-@RequestMapping
+@RequestMapping(value = "/checkout", method = RequestMethod.GET)
 public ModelAndView checkoutProcess(HttpServletRequest req) 
 {
 ModelAndView mav = new ModelAndView();
@@ -101,7 +114,8 @@ mav.addObject("cart", cart);
 return mav;
 }
 
-@RequestMapping
+@RequestMapping(value = "/invoiceprocess", method = RequestMethod.POST )
+
 public ModelAndView invoiceprocess(HttpServletRequest req)
 {
 ModelAndView mav = new ModelAndView("invoice");
@@ -120,19 +134,19 @@ mav.addObject(order);
 return mav;
 }
 
-@RequestMapping
+@RequestMapping(value = "/orderprocess", method = RequestMethod.POST )
 public ModelAndView orderprocess(HttpServletRequest req) {
 
-	ModelAndView mav = new ModelAndView("ack");
+	ModelAndView mav = new ModelAndView("welcome");
 	return mav;
 	}
-	@RequestMapping
+	@RequestMapping("/welcome")
 	public String ack()
 	{
-		return "ack";
+		return "welcome";
 	}
 	
-@RequestMapping
+@RequestMapping(value = "/deletePCart/{cartId}")
 public ModelAndView  deleteCart(@PathVariable("cartId")int cartId, HttpServletRequest req)
 {
 ModelAndView mav = new ModelAndView();
@@ -143,7 +157,7 @@ mav.addObject("CartInfo", CartDaoImp.findingbycartid(useremailid));
 mav.setViewName("cart");
 return mav;
 }
-@RequestMapping
+@RequestMapping(value = "/goToCart", method = RequestMethod.GET)
 public ModelAndView gotocart(HttpServletRequest req)
 {
 ModelAndView mav= new ModelAndView();

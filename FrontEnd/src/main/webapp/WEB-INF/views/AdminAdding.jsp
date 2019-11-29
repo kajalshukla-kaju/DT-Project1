@@ -5,8 +5,8 @@
     pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
-<spring:url var="css" value="/assets/css" />
-<spring:url var="images" value="/assets/images" />
+<spring:url var="css" value="/WEB-INF/CSS" />
+<spring:url var="images" value="/WEB-INF/CSS/images" />
 <!DOCTYPE html>
 <html>
 <head>
